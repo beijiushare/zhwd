@@ -22,7 +22,8 @@
 1、选择菜单栏的**首页** --> 新的创作 --> **文章**
 
 图片1
-![img1](img/1.webp)
+
+![img1](https://ts1.tc.mm.bing.net/th/id/OIP-C.r3r4PXqEhcWwiA6CvPVmnAHaEK?rs=1&pid=ImgDetMain)
 
 2、填写标题、坐着，粘贴文章内容（图片2）
 

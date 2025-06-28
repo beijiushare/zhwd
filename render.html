@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 渲染</title>
+    <!-- 引入 marked 库 -->
+    <script src="./marked.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-bottom: 20px;
+            padding: 25px;
+            padding-top: 10px;
+            border: 1.5px solid #7d818176;
+        }
+    </style>
+</head>
+<body>
+    <div id="markdown-content"></div>
+    <script>
+        // 获取 URL 参数中的 markdown 文件路径
+        const urlParams = new URLSearchParams(window.location.search);
+        const mdFilePath = urlParams.get('md');
+
+        if (mdFilePath) {
+            // 使用 fetch API 获取 Markdown 文件内容
+            fetch(mdFilePath)
+              .then(response => response.text())
+              .then(mdContent => {
+                    // 使用 marked 库将 Markdown 内容转换为 HTML
+                    const htmlContent = marked.parse(mdContent);
+                    document.getElementById('markdown-content').innerHTML = htmlContent;
+                })
+              .catch(error => {
+                    console.error('加载 Markdown 文件出错:', error);
+                    document.getElementById('markdown-content').innerHTML = '<p>加载 Markdown 文件失败，请检查文件路径。</p>';
+                });
+        } else {
+            document.getElementById('markdown-content').innerHTML = '<p>未提供 Markdown 文件路径。</p>';
+        }
+    </script>
+</body>
+</html>
