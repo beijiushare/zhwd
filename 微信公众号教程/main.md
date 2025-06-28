@@ -23,7 +23,7 @@
 
 图片1
 
-![img1](https://ts1.tc.mm.bing.net/th/id/OIP-C.r3r4PXqEhcWwiA6CvPVmnAHaEK?rs=1&pid=ImgDetMain)
+![img1](https://i.postimg.cc/Mpj03wwk/1.webp)
 
 2、填写标题、坐着，粘贴文章内容（图片2）
 
@@ -36,10 +36,10 @@
   -  记得及时保存草稿，以防意外
 
 图片2
-![img2](img/2.webp)
+![img2](https://i.postimg.cc/ZYVLCjHQ/2.webp)
 
 图片3
-![img2](img/3.webp)
+![img2](https://i.postimg.cc/Dy0PssYw/3.webp)
 
 3、填写配置项
 
@@ -49,7 +49,7 @@
 - 其余选项视情况而定，可填可不填，此处不作要求。 
   
 图片4
-![img3](img/4.webp)
+![img3](https://i.postimg.cc/c4zMcHVM/4.webp)
 
 ### 发表
 
