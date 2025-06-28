@@ -107,14 +107,65 @@
                 width: 100%; /* 让图片宽度占满容器 */
             }
         }
-    </style>
+    /* 侧边栏样式 */
+    #friendLinks {
+        display: none;
+    }
+
+    @media (min-width: 1024px) {
+        #friendLinks {
+            display: block;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 6rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        #friendLinks nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem; /* 确保链接之间有间距 */
+        }
+    }
+
+    #closeFriendLinks {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
+    <!-- 侧边栏目，仅在电脑端显示 -->
+    <aside id="friendLinks">
+        <button id="closeFriendLinks">
+            X
+        </button>
+        <h3 class="text-lg font-bold mb-2">友链推荐</h3>
+        <nav>
+            <a href="https://x.beijiu.top/qrcode.webp" class="text-blue-600 hover:text-blue-800 transition-colors">公众号</a>
+            <a href="https://x.beijiu.top" class="text-blue-600 hover:text-blue-800 transition-colors">储物间</a>
+            <a href="https://newsnow.busiyi.world/c/hottest" class="text-blue-600 hover:text-blue-800 transition-colors">新闻聚合</a>
+        </nav>
+    </aside>
     <div id="markdown-content"></div>
     <script>
         // 获取 URL 参数中的 markdown 文件路径
         const urlParams = new URLSearchParams(window.location.search);
         const mdFilePath = urlParams.get('md');
+
+        const friendLinks = document.getElementById('friendLinks');
+        const closeFriendLinks = document.getElementById('closeFriendLinks');
+
+        closeFriendLinks.addEventListener('click', function() {
+            friendLinks.style.display = 'none';
+        });
 
         if (mdFilePath) {
             // 使用 fetch API 获取 Markdown 文件内容
